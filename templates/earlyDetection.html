@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skin Cancer Detection</title>
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="stylesheet" href="../static/css/all.min.css" />
+    <link rel="shortcut icon" href="../static/img/fav-icon.svg" type="image/x-icon" />
+  </head>
+  <body>
+    <header>
+      <a href="{{ url_for('home') }}" class="logo"><i class="fas fa-hospital"></i>SkinCare</a>
+
+      <nav class="navbar">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('about') }}">Skin Cancer Information</a>
+        <a href="{{ url_for('prevention') }}">Prevention</a>
+        <a href="{{ url_for('riskFactor') }}">Risk Factors</a>
+        <a href="{{ url_for('earlyDetection') }}">Early Detection</a>
+        <a href="{{ url_for('classify') }}">Classify</a>
+      </nav>
+    </header>
+
+    <section class="container">
+      <div class="container-content">
+        <h1 class="title">Early Detection: Overview</h1>
+        <h3 class="Subheader">
+          Spot the Cancer You Can See When It’s Easiest to Treat.
+        </h3>
+        <article>
+          <p>
+            The world’s most common cancer is a relentless disease that strikes
+            one in five people by age 70. The good news is that most cases are
+            curable if they are diagnosed and treated early enough. But in order
+            to stop skin cancer, we have to spot it on time.
+          </p>
+          <p>
+            <b>Skin cancer is the cancer you can see. </b>
+            Unlike cancers that develop inside the body, skin cancers form on
+            the outside and are usually visible. That’s why skin exams, both at
+            home and with a dermatologist, are especially vital.
+          </p>
+
+          <p>
+            <b>Early detection saves lives.</b>
+            Learning what to look for on your own skin gives you the power to
+            detect cancer early when it’s easiest to cure, before it can become
+            dangerous, disfiguring or deadly.
+          </p>
+        </article>
+      </div>
+
+      <div class="two-columns">
+        <article class="left-container">
+          <h4 class="underline-title">What you can do</h4>
+        </article>
+        <article class="right-container">
+          <div class="right-container-content">
+            <p>
+              <b>Examine your skin once a month</b><br />Learn about the warning
+              signs of skin cancer and know what to look for during a self-exam.
+              If you spot anything that just doesn’t look right, get it checked
+              by your dermatologist as soon as possible.
+            </p>
+            <p>
+              <b>See your dermatologist annually</b><br />Get a full-body,
+              professional skin exam once a year or more often if you are at
+              higher risk for skin cancer. Make the most of your appointment
+              with these tips. If you’ve never seen a dermatologist, our
+              physician finder can help you locate one.
+            </p>
+          </div>
+        </article>
+      </div>
+      <!-- <div class="two-columns">
+        <article class="left-container">
+          <h4 class="underline-title">Early detection <br>can save your <br>life</h4>
+        </article>
+        <article class="right-container">
+          <div class="right-container-content">
+            <p>
+              <b>Skin Cancer</b>IS THE MOST COMMON TYPE OF CANCER IN THE UNITED
+              STATES
+            </p>
+            <p>
+              ONE IN FIVE AMERICANS DEVELOP SKIN CANCER
+              <b>BY THE AGE OF 70</b>
+            </p>
+            <p>
+              IF SKIN CANCER IS CAUGHT EARLY enough
+              <b>IT CAN BE A OK</b>
+            </p>
+          </div>
+        </article>
+      </div> -->
+    </section>
+  </body>
+</html>
+

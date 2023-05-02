@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skin Cancer Detection</title>
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="stylesheet" href="../static/css/all.min.css" />
+    <link rel="shortcut icon" href="../static/img/fav-icon.svg" type="image/x-icon" />
+  </head>
+  <body>
+    <header>
+      <a href="{{ url_for('home') }}" class="logo"><i class="fas fa-hospital"></i>SkinCare</a>
+
+      <nav class="navbar">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('about') }}">Skin Cancer Information</a>
+        <a href="{{ url_for('prevention') }}">Prevention</a>
+        <a href="{{ url_for('riskFactor') }}">Risk Factors</a>
+        <a href="{{ url_for('earlyDetection') }}">Early Detection</a>
+        <a href="{{ url_for('classify') }}">Classify</a>
+      </nav>
+    </header>
+
+    <section class="container">
+      <div class="container-content">
+        <h1 class="title">Risk Factors</h1>
+        <h3 class="Subheader">
+          A risk factor is anything that increases your likelihood of developing
+          a disease like cancer. When it comes to skin cancer risk factors,
+          there are several that can contribute to the development of this
+          disease. Fortunately, many of these risks can be addressed by you.
+        </h3>
+        <article>
+          <div class="two-columns">
+            <div class="left-container half-contain">
+              <h5>The following factors increase your skin cancer risk:</h5>
+              <ul>
+                <li>Indoor tanning</li>
+                <li>Sunburns</li>
+                <li>Skin Type</li>
+                <li>Unprotected Exposure to UVA &amp; UVB Rays</li>
+                <li>Genetics</li>
+                <li>Atypical Moles</li>
+                <li>Organ Transplant</li>
+                <li>Red Hair</li>
+              </ul>
+            </div>
+            <div class="double-arrow-image">
+              <img src="../static/img/double-arrow.png" alt="" />
+            </div>
+            <div class="right-container half-contain">
+              <h5>The following factors decrease your skin cancer risk:</h5>
+              <ul>
+                <li>Daily use of a broad spectrum sunscreen with an SPF 15+</li>
+                <li>
+                  Use of sun protective clothing, UV-blocking sunglasses and
+                  wide-brimmed hats
+                </li>
+                <li>Seeking the shade whenever possible</li>
+                <li>Protective window film in your car and home</li>
+                <li>Annual skin exams with your physician</li>
+                <li>Monthly self-exams</li>
+                <li>A healthy diet</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </body>
+</html>
+

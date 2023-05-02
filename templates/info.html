@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skin Cancer Detection</title>
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="stylesheet" href="../static/css/all.min.css" />
+    <link rel="shortcut icon" href="../static/img/fav-icon.svg" type="image/x-icon" />
+  </head>
+  <body>
+    <header>
+      <a href="{{ url_for('home') }}" class="logo"><i class="fas fa-hospital"></i>SkinCare</a>
+
+      <nav class="navbar">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('about') }}">Skin Cancer Information</a>
+        <a href="{{ url_for('prevention') }}">Prevention</a>
+        <a href="{{ url_for('riskFactor') }}">Risk Factors</a>
+        <a href="{{ url_for('earlyDetection') }}">Early Detection</a>
+        <a href="{{ url_for('classify') }}">Classify</a>
+      </nav>
+    </header>
+
+    <section class="container">
+      <div class="container-content">
+        <h1 class="title">Skin Cancer 101</h1>
+        <h3 class="Subheader">Knowledge Is Your Best Defense</h3>
+        <article>
+          <h3 class="miniTitle">What is Skin Cancer?</h3>
+          <p>
+            Skin cancer is the out-of-control growth of abnormal cells in the
+            epidermis, the outermost skin layer, caused by unrepaired DNA damage
+            that triggers mutations. These mutations lead the skin cells to
+            multiply rapidly and form malignant tumors. The main types of skin
+            cancer are basal cell carcinoma (BCC), squamous cell carcinoma
+            (SCC), melanoma and Merkel cell carcinoma (MCC).
+          </p>
+        </article>
+        <article>
+          <h3 class="miniTitle">What Does Skin Cancer Look Like?</h3>
+          <p>
+            Skin cancers can look quite different from one person to another due
+            to skin tone, size and type of skin cancer and location on the body.
+            See our Skin Cancer Pictures page for a selection of photos to help
+            you understand what skin cancers can look like. View pictures.
+          </p>
+        </article>
+        <article>
+          <h3 class="miniTitle">What Causes Cancers of the Skin?</h3>
+          <p>
+            The two main causes of skin cancer are the sun’s harmful ultraviolet
+            (UV) rays and using UV tanning beds. The good news is that if skin
+            cancer is caught early, your dermatologist can treat it with little
+            or no scarring and high odds of eliminating it entirely. Often, the
+            doctor may even detect the growth at a precancerous stage, before it
+            has become a full-blown skin cancer or penetrated below the surface
+            of the skin.
+          </p>
+        </article>
+      </div>
+
+      <div class="two-columns">
+        <article class="left-container">
+          <h4 class="underline-title">Basal cell carcinoma</h4>
+        </article>
+        <article class="right-container">
+          <div class="right-container-content">
+            <p>
+              <b>What is it?</b> Basal cell carcinomas (BCCs) are abnormal,
+              uncontrolled growths that arise from the skin’s basal cells in the
+              outermost layer of skin (epidermis).
+            </p>
+            <p>
+              <b>Where is it usually found?</b> These cancers most often develop
+              on skin areas typically exposed to the sun, especially the face,
+              ears, neck, scalp, shoulders and back.
+            </p>
+            <p>
+              <b>What causes it?</b> Most BCCs are caused by the combination of
+              intermittent, intense exposure and cumulative, long-term exposure
+              to UV radiation from the sun.
+            </p>
+            <p>
+              <b>How many people get it?</b> BCC is the most common form of skin
+              cancer, with approximately 3.6 million cases diagnosed in the
+              United States each year.
+            </p>
+            <p>
+              <b>How serious is it? </b> BCCs can be locally destructive if not
+              detected and treated early. Occasionally these cancers metastasize
+              (spread); and in very rare instances they can be fatal.
+            </p>
+          </div>
+
+          <div class="two-columns">
+            <article>
+              <ul>
+                <li>BCC Overview</li>
+                <li>Risk Factors</li>
+                <li>Warning Signs &amp; Photos</li>
+                <li>Treatment Options</li>
+                <li>BCC in People of Color</li>
+                <li>Advanced BCC</li>
+              </ul>
+            </article>
+            <article class="image-container">
+              <img src="../static/img/basal-cell.png" alt="" />
+            </article>
+          </div>
+        </article>
+      </div>
+      <!-- two columns separator -->
+      <div class="two-columns">
+        <article class="left-container">
+          <h4 class="underline-title">Squamous cell carcinoma</h4>
+        </article>
+        <article class="right-container">
+          <div class="right-container-content">
+            <p>
+              <b>What is it?</b> Squamous cell carcinoma (SCC) is an
+              uncontrolled growth of abnormal cells arising from the squamous
+              cells in the outmost layer of skin (epidermis).
+            </p>
+            <p>
+              <b>Where is it usually found?</b> SCCs are common on sun-exposed
+              areas such as the ears, face, scalp, neck and hands. These are
+              places where the skin often reveals signs of sun damage, including
+              wrinkles and age spots.
+            </p>
+            <p>
+              <b>What causes it?</b> Cumulative, long-term exposure to UV
+              radiation from the sun and tanning beds causes most SCCs.
+            </p>
+            <p>
+              <b>How many people get it?</b> SCC is the second most common form
+              of skin cancer. An estimated 1.8 million cases are diagnosed each
+              year in the U.S.
+            </p>
+
+            <p>
+              <b>How serious is it? </b> SCCs can sometimes grow rapidly and
+              metastasize if not detected and treated early.
+            </p>
+          </div>
+
+          <div class="two-columns">
+            <article>
+              <ul class="innerList-item">
+                <li>SCC Overview</li>
+                <li>Risk Factors</li>
+                <li>Warning Signs and Photos</li>
+                <li>Treatment Options</li>
+                <li>Advanced SCC Treatment</li>
+                <li>SCC in People of Color</li>
+              </ul>
+            </article>
+            <article class="image-container">
+              <img src="../static/img/1.png" alt="" />
+            </article>
+          </div>
+        </article>
+      </div>
+      <!-- two columns separator -->
+      <div class="two-columns">
+        <article class="left-container">
+          <h4 class="underline-title">Melanoma</h4>
+        </article>
+        <article class="right-container">
+          <div class="right-container-content">
+            <p>
+              <b>What is it?</b> Melanoma is a cancer that develops from
+              melanocytes, the skin cells that produce melanin pigment, which
+              gives skin its color.
+            </p>
+            <p>
+              <b>Where is it usually found?</b> Melanomas often resemble moles
+              and sometimes may arise from them. They can appear on any area of
+              the body, even in areas that are not typically exposed to the sun.
+            </p>
+            <p>
+              <b>What causes it?</b> Melanoma is often triggered by the kind of
+              intense, intermittent sun exposure that leads to sunburn. Tanning
+              bed use also increases risk for melanoma.
+            </p>
+            <p>
+              <b>How many people get it?</b> In 2023, an estimated 186,680 new
+              cases of melanoma are expected to occur in the U.S. Of those,
+              89,070 cases will be in situ (noninvasive), confined to the
+              epidermis (the top layer of skin), and 97,610 cases will be
+              invasive, penetrating the epidermis into the skin’s second layer
+              (the dermis).
+            </p>
+
+            <p>
+              <b>How serious is it? </b> Melanoma is the most dangerous of the
+              three most common forms of skin cancer. Melanomas can be curable
+              when caught and treated early. In 2023, melanoma is projected to
+              cause about 7,990 deaths.
+            </p>
+          </div>
+
+          <div class="two-columns">
+            <article>
+              <ul class="innerList-item">
+                <li>Melanoma Overview</li>
+                <li>Risk Factors</li>
+                <li>Warning Signs and Photos</li>
+                <li>Stages</li>
+                <li>Treatment Options</li>
+                <li>Melanoma in People of Color</li>
+              </ul>
+            </article>
+            <article class="image-container">
+              <img src="../static/img/melanoma.png" alt="" />
+            </article>
+          </div>
+        </article>
+      </div>
+    </section>
+  </body>
+</html>

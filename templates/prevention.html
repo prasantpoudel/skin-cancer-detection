@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skin Cancer Detection</title>
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="stylesheet" href="../static/css/all.min.css" />
+    <link rel="shortcut icon" href="../static/img/fav-icon.svg" type="image/x-icon" />
+  </head>
+  <body>
+    <header>
+      <a href="{{ url_for('home') }}" class="logo"><i class="fas fa-hospital"></i>SkinCare</a>
+
+      <nav class="navbar">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('about') }}">Skin Cancer Information</a>
+        <a href="{{ url_for('prevention') }}">Prevention</a>
+        <a href="{{ url_for('riskFactor') }}">Risk Factors</a>
+        <a href="{{ url_for('earlyDetection') }}">Early Detection</a>
+        <a href="{{ url_for('classify') }}">Classify</a>
+      </nav>
+    </header>
+
+    <section class="container">
+      <div class="container-content">
+        <h1 class="title">Skin Cancer Detection</h1>
+        <h3 class="Subheader">Protect Yourself With a Complete Approach</h3>
+        <article>
+          <p>
+            Skin cancer prevention requires a comprehensive approach to
+            protecting yourself against harmful UV radiation.
+          </p>
+          <p>
+            That’s because UV radiation from the sun isn’t just dangerous, it’s
+            also sneaky. Not only can it cause premature aging and skin cancer,
+            it reaches you even when you’re trying to avoid it – penetrating
+            clouds and glass, and bouncing off of snow, water and sand. What’s
+            more, sun damage accumulates over the years, from prolonged outdoor
+            exposure to simple activities like walking the dog, going from your
+            car to the store and bringing in the mail.
+          </p>
+        </article>
+
+        <div class="list-item">
+          <p><b>The skin Cancer Foundation</b> recommends that you:</p>
+          <ul>
+            <li><b>Seek the shade,</b> especially between 10 AM and 4 PM.</li>
+            <li><b>Don’t get</b> sunburned.</li>
+            <li><b>Avoid tanning,</b> and never use UV tanning beds.</li>
+            <li>
+              <b>Cover up with clothing,</b> including a broad-brimmed hat and
+              UV-blocking sunglasses.
+            </li>
+            <li>
+              <b>Use a broad-spectrum (UVA/UVB)</b> sunscreen with an SPF of 15 or
+              higher every day. For extended outdoor activity, use a
+              water-resistant, broad- spectrum (UVA/UVB) sunscreen with an SPF
+              of 30 or higher.
+            </li>
+            <li>
+              <b>Apply 1 ounce (2 tablespoons)</b> of sunscreen to your entire body 30
+              minutes before going outside. Reapply every two hours or after
+              swimming or excessive sweating. Find sunscreen by searching our
+              Recommended Products.
+            </li>
+            <li>
+             <b> Keep newborns out of the sun.</b> Use sunscreen on babies over the age
+              of six months.
+            </li>
+            <li>Examine your skin head-to-toe every month.</li>
+            <li>
+              <b>See a dermatologist</b> at least once a year for a professional skin
+              exam.
+            </li>
+            <li>
+              <b>Get all the details:</b> Your Daily Sun Protection Guide. Skin Cancer
+              Prevention PDF.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

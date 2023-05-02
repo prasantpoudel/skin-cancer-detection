@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skin Cancer Detection</title>
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="stylesheet" href="../static/css/all.min.css" />
+    <link rel="shortcut icon" href="../static/img/fav-icon.svg" type="image/x-icon" />
+  </head>
+  <body>
+    <header>
+      <a href="{{ url_for('home') }}" class="logo"><i class="fas fa-hospital"></i>SkinCare</a>
+
+      <nav class="navbar">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('about') }}">Skin Cancer Information</a>
+        <a href="{{ url_for('riskFactor') }}">Risk Factors</a>
+        <a href="{{ url_for('earlyDetection') }}">Early Detection</a>
+        <a href="{{ url_for('classify') }}">Classify</a>
+      </nav>
+    </header>
+    <body class="">
+      <div class="flex h-screen">
+        <div class="flex-1 p-10 ">
+          <div class="form-container">
+            <form
+              action="{{ url_for('predict') }}"
+              method="POST"
+              enctype="multipart/form-data"
+            >
+              <h2 class="mt-4 text-lg text-white text-black-100 items-center">
+                Select an image to classify
+              </h2>
+              <div class="flex items-center justify-center w-full">
+                <label
+                  for="dropzone-file"
+                  class="flex flex-col rounded-3xl items-center justify-center w-full h-80 border-5 border-red-800 border-double border-4 border-sky-500  rounded-lg cursor-pointer bg-[#151dbd] dark:hover:bg-white-800 dark:bg-whit-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
+                >
+                  <div
+                    class="flex flex-col items-center justify-center pt-5 pb-6"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="w-10 h-10 mb-3 text-gray-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+                      ></path>
+                    </svg>
+                    <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+                      <span class="font-semibold">Click to upload</span> or drag
+                      and drop
+                    </p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">
+                      JPEG, PNG, JPG (MAX. 800x400px)
+                    </p>
+                  </div>
+                  <input
+                    id="dropzone-file"
+                    type="file"
+                    name="image"
+                    id="image"
+                    accept=".jpg, .jpeg, .png"
+                    required
+                    class="hidden"
+                  />
+                </label>
+              </div>
+              <div class="btn-classify">
+
+             
+              <button
+                type="submit"
+                value="Classify"
+                class="mt-5 focus:outline-none text-white  focus:ring-blue-300 font-medium rounded-lg text-sm px-8 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+              >
+                Classify
+              </button>
+            </div>
+            </form>
+          </div>
+        </div>
+        <div
+          class="flex-1 bg-contain bg-center"
+          style="background-image: url('../static/img/img3.png')"
+        ></div>
+      </div>
+      <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+      <script src="https://cdn.tailwindcss.com"></script>
+    </body>
+  
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skin Cancer Detection</title>
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="../static/img/fav-icon.svg"
+      type="image/x-icon"
+    />
+  </head>
+  <header>
+    <a href="{{ url_for('home') }}" class="logo"
+      ><i class="fas fa-hospital"></i>SkinCare</a
+    >
+
+    <nav class="navbar">
+      <a href="{{ url_for('home') }}">Home</a>
+      <a href="{{ url_for('about') }}">Skin Cancer Information</a>
+      <a href="{{ url_for('prevention') }}">Prevention</a>
+      <a href="{{ url_for('riskFactor') }}">Risk Factors</a>
+      <a href="{{ url_for('earlyDetection') }}">Early Detection</a>
+      <a href="{{ url_for('classify') }}">Classify</a>
+    </nav>
+  </header>
+
+  <body class="bg-cover bg-[url('../static/img/bac.png')] bg-no-repeat">
+    <section class="result">
+      <div class="result-container">
+        <article class="output-img">
+          <div>
+            <img
+              src="{{ img_path }}"
+              alt="Skin Image"
+            />
+          </div>
+          <div>
+          <!-- <h2 class="result-title"> Predicted Class : {{ result.class_name }} </h2> -->
+          <div id="skin-info"></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <script>
+      const skinData = [
+        {
+          name: "Actinic Keratoses and Intraepithelial Carcinomae (Cancer)",
+          Info: "Actinic keratoses (AKs) are small, scaly patches that appear on sun-exposed skin, such as the face, scalp, ears, arms, and hands. AKs are considered precancerous lesions because they have the potential to develop into squamous cell carcinoma, a type of skin cancer.",
+          Locations:
+            "AKs typically appear as rough, scaly, or crusty growths that may be red, pink, or brown in color. They may be flat or slightly raised and can range in size from a few millimeters to a few centimeters. They may also be tender or itchy and may bleed or form a scab if scraped or rubbed.",
+          Cause:
+            "The main cause of AKs is prolonged exposure to ultraviolet (UV) radiation from the sun or tanning beds. Other risk factors include having fair skin, a history of sunburns, a weakened immune system, and a family history of skin cancer.",
+          Treatment:
+            "Treatment for AKs typically involves the removal of the affected skin using various methods, including cryotherapy (freezing), curettage (scraping), or topical medications. Topical medications, such as imiquimod or 5-fluorouracil, are applied directly to the affected area and work by causing the skin to peel and shed the abnormal cells.",
+        },
+        {
+          name: "Basal Cell Carcinoma (Cancer)",
+          Info: "Basal cell carcinoma (BCC) is a type of skin cancer that arises from the basal cells in the outermost layer of the skin. It is the most common type of skin cancer, accounting for about 80% of all skin cancers. BCC usually develops on areas of the skin that are frequently exposed to the sun, such as the face, neck, scalp, and arms.",
+          Locations:
+            "BCC typically appears as a small, shiny bump or nodule on the skin, which may have visible blood vessels and a central depression. It may also appear as a flat, scaly, or slightly raised patch of skin that is pink or flesh-colored. BCC rarely spreads to other parts of the body but can grow larger and invade nearby tissues if left untreated.",
+          Cause:
+            "The main cause of BCC is exposure to ultraviolet (UV) radiation from the sun or tanning beds. Other risk factors include having fair skin, a history of sunburns, a weakened immune system, and a family history of skin cancer.",
+          Treatment:
+            "Treatment for BCC typically involves surgical removal of the cancerous tissue. Other treatment options may include radiation therapy, topical medications, and photodynamic therapy. Early detection and treatment are crucial for successful management of BCC. Prevention involves protecting the skin from UV radiation by wearing protective clothing, using sunscreen, and avoiding prolonged sun exposure, especially during peak sun hours.",
+        },
+        {
+          name: "Benign Keratosis-like Lesions (Non-Cancerous)",
+          Info: "Benign keratosis-like lesions (BKLLs) are skin growths that are typically non-cancerous and do not pose a significant health risk. They can be a variety of colors, including white, tan, brown, or black, and may have a rough, scaly, or wart-like appearance.",
+          Locations:
+            "BKLLs are typically caused by sun damage or aging and are more common in older adults. They may appear on areas of the body that are frequently exposed to the sun, such as the face, hands, and arms.",
+          Cause:
+            "A seborrheic keratosis is a benign form of skin tumor. The cause is unknown. The condition commonly appears after age 40. It tends to run in families.",
+          Treatment:
+            "Prevention of BKLLs involves protecting the skin from UV radiation by wearing protective clothing, using sunscreen, and avoiding prolonged sun exposure, especially during peak sun hours. Regular skin checks and early detection of BKLLs are important for successful management and prevention of skin cancer.",
+        },
+        {
+          name: "Dermatofibroma (Non-Cancerous)",
+          Info: "Dermatofibroma is a common benign skin growth that usually appears as a small, firm, raised bump on the skin. These growths can be a variety of colors, including pink, red, brown, or purple, and often occur on the legs, arms, or torso.",
+          Locations:
+            "The exact cause of dermatofibromas is unknown, but they are thought to be a result of a benign proliferation of cells in the skin's connective tissue. They may occur more frequently in women and may also be associated with insect bites or injury to the skin.",
+          Cause:
+            "In some cases, dermatofibromas may resemble other types of skin growths, such as melanoma, so it is important to have any suspicious growths checked by a dermatologist. If treatment is necessary, the dermatofibroma can be surgically excised or removed using cryotherapy (freezing), electrosurgery, or laser therapy.",
+          Treatment:
+            "Prevention of dermatofibromas involves protecting the skin from trauma or injury and avoiding prolonged sun exposure. Regular skin checks and early detection of dermatofibromas are important for successful management and prevention of skin cancer.",
+        },
+        {
+          name: "Melanoma (Cancer)",
+          Info: "Melanoma is a type of skin cancer that originates from the pigment-producing cells (melanocytes) in the skin. Melanoma is less common than other types of skin cancer, but it is more aggressive and can spread to other parts of the body if not detected and treated early.",
+          Locations:
+            "The exact cause of melanoma is not known, but exposure to ultraviolet (UV) radiation from the sun or tanning beds is a major risk factor. Other risk factors include having fair skin, a history of sunburns, a weakened immune system, a family history of melanoma, and having many moles or atypical moles.",
+          Cause:
+            "unprotected UV radiation exposure. a history of childhood tanning and sunburn. a pattern of short, intense periods of exposure to UV radiation. having a lot of moles (naevi) – more than 50 on the body and more than 10 above the elbows on the arms.",
+          Treatment:
+            "Surgery to remove the tumor is the primary treatment of all stages of melanoma. A wide local excision is used to remove the melanoma and some of the normal tissue around it. Skin grafting (taking skin from another part of the body to replace the skin that is removed) may be done to cover the wound caused by surgery.",
+        },
+        {
+          name: "Melanocytic Nevi (Non-Cancerous)",
+          Info: "Melanocytic nevi, commonly known as moles, are benign (non-cancerous) growths on the skin that are composed of melanocytes, the cells that produce the pigment that gives skin its color. Moles can be present at birth, but most develop during childhood and early adulthood.",
+          Locations:
+            "Nevus cells, a type of melanocyte, are found in the basal layer of the epidermis as well as in the dermis, are arranged in nests, and do not have dendritic processes.",
+          Cause:
+            "The exact cause of melanocytic nevi is not fully understood, but they are thought to be caused by a combination of genetic and environmental factors. Individuals with fair skin, a history of sunburns, or a family history of melanocytic nevi are more likely to develop moles.",
+          Treatment:
+            "Melanocytic nevi can be surgically removed for cosmetic considerations or because of concern regarding the biological potential of a lesion. Melanocytic nevi removed for cosmesis are often removed by tangential or shave excision. Punch excision can be used for relatively small lesions.",
+        },
+        {
+          name: "Vascular Lesion (Non-Cancerous)",
+          Info: "Vascular lesions are abnormal clusters or growths of blood vessels in the skin or other tissues. There are many different types of vascular lesions, including birthmarks, hemangiomas, port wine stains, and spider veins.",
+          Locations: "Anywhere",
+          Cause:
+            "The causes of vascular lesions vary depending on the type of lesion. Some types of vascular lesions, such as birthmarks, are present at birth and are thought to be caused by abnormal development of blood vessels in the womb.",
+          Treatment:
+            "Vascular lesions may be treated with a variety of methods depending on the type and severity of the lesion. Laser therapy is a common treatment option that can selectively target and destroy the abnormal blood vessels while leaving surrounding tissue intact. Other treatment options include surgery, cryotherapy (freezing), or sclerotherapy (injection of a chemical into the blood vessel to cause it to collapse and eventually be absorbed by the body)",
+        },
+      ];
+      const predictedClass = '{{ result.class_name }}';
+      
+
+      skinData.forEach(function (skin) {
+        if (skin.name === predictedClass) {
+          skinInfo = `
+          <div>
+            <h2 class="result-title"> Predicted Class : {{ result.class_name }} </h2>
+            <div class="result-output">
+
+              <p><b>Info:</b> ${skin.Info}</p>
+              <p><b>Locations:</b> ${skin.Locations}</p>
+              <p><b>Cause:</b> ${skin.Cause}</p>
+              <p><b>Treatment:</b> ${skin.Treatment}</p>
+            </div>
+          </div> 
+          `;
+        }
+      });
+      document.getElementById("skin-info").innerHTML = skinInfo;
+    </script>
+  </body>
+</html>
