@@ -4,4 +4,7 @@ panda
 tensorflow
 keras
 matplotlib
+Flask
+Jinja2
 gunicorn==20.0.4
+cv2
