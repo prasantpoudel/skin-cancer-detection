@@ -4,4 +4,4 @@ panda
 tensorflow
 keras
 matplotlib
-gunicorn
+gunicorn==20.0.4
