@@ -1,0 +1,38 @@
+name: Deploy ML Code to Rails App
+
+on:
+  push:
+    branches:
+      - main  # Adjust the branch name as needed
+
+jobs:
+  deploy_ml:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7  # Adjust Ruby version as needed
+
+      - name: Install Dependencies
+        run: |
+          gem install bundler
+          bundle install
+
+      - name: Deploy ML Code
+        env:
+          RAILS_ENV: production  # Adjust environment as needed
+        run: |
+          # Replace these commands with your actual deployment steps
+          bundle exec rake db:migrate
+          bundle exec rake assets:precompile
+          # Run any ML-related deployment commands here
+
+      - name: Restart Rails Server
+        run: |
+          # Replace this with your actual command to restart the Rails server
+          sudo service rails_app restart
